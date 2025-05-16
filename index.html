@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lee Designer Watches</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap');
+
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+    color: #e0c68a;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+  }
+
+  .logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #e0c68a;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 4px;
+  }
+
+  .logo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(224,198,138,0.7), transparent);
+    animation: shine 3s infinite;
+  }
+
+  @keyframes shine {
+    0% { left: -100%; }
+    50% { left: 100%; }
+    100% { left: 100%; }
+  }
+
+  .intro-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 5%;
+    gap: 3rem;
+  }
+
+  .intro-text {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .intro-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #f5deb3;
+  }
+
+  .intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #c7b07e;
+    max-width: 600px;
+  }
+
+  .cta-buttons {
+    margin-top: 2rem;
+  }
+
+  .btn {
+    background: transparent;
+    border: 2px solid #e0c68a;
+    color: #e0c68a;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-right: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px #e0c68a55;
+  }
+
+  .btn:hover {
+    background: #e0c68a;
+    color: #1a1a1a;
+    transform: scale(1.08);
+    box-shadow: 0 0 25px #e0c68aff;
+  }
+
+  .product-section {
+    padding: 4rem 5%;
+    background: #111;
+  }
+
+  .product-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #f5deb3;
+  }
+
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .product {
+    background: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #e0c68a55;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #e0c68a99;
+  }
+
+  .product h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 0.5rem;
+    color: #e0c68a;
+    font-size: 1.3rem;
+  }
+
+  .price {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #f5deb3;
+  }
+
+  .product p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    color: #c7b07e;
+  }
+
+  .product button {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #e0c68a;
+    color: #e0c68a;
+    padding: 0.6rem 0;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .product button:hover {
+    background: #e0c68a;
+    color: #1a1a1a;
+  }
+
+  form {
+    background: #1a1a1a;
+    margin: 3rem auto;
+    max-width: 600px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #e0c68a66;
+  }
+
+  form label {
+    display: block;
+    margin-bottom: 0.4rem;
+    color: #f5deb3;
+    font-weight: 600;
+  }
+
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1.5rem;
+    background: #0a0a0a;
+    border: 1.5px solid #e0c68a;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 1rem;
+  }
+
+  form button {
+    background: #e0c68a;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #1a1a1a;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  form button:hover {
+    background: #f5deb3;
+  }
+
+  @media (max-width: 768px) {
+    .intro-section {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn {
+      margin: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">LEE DESIGNER</div>
+</header>
+
+<section class="intro-section">
+  <div class="intro-text">
+    <h1>Masterpieces of Time</h1>
+    <p>Each Lee Designer watch tells a story of precision and elegance. Discover the perfect fusion of style, luxury, and legacy in every timepiece we create.</p>
+    <div class="cta-buttons">
+      <button class="btn" onclick="document.querySelector('.product-section').scrollIntoView({ behavior: 'smooth' })">Explore Watches</button>
+      <button class="btn" onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact to Purchase</button>
+    </div>
+  </div>
+</section>
+
+<section class="product-section">
+  <h2>Our Signature Timepieces</h2>
+  <div class="product-grid">
+    <div class="product">
+      <h3>Chrono Elite</h3>
+      <div class="price">$999</div>
+      <p>A high-end chronograph featuring sapphire crystal and alligator leather.</p>
+      <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact to Purchase</button>
+    </div>
+    <div class="product">
+      <h3>Urban Classic</h3>
+      <div class="price">$450</div>
+      <p>Modern and minimalist with stainless steel case and matte dial.</p>
+      <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact to Purchase</button>
+    </div>
+    <div class="product">
+      <h3>Elegance 90</h3>
+      <div class="price">$90</div>
+      <p>Affordable sophistication with a quartz movement and leather strap.</p>
+      <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact to Purchase</button>
+    </div>
+    <div class="product">
+      <h3>Midnight Royale</h3>
+      <div class="price">$780</div>
+      <p>Dark dial with gold trim and luxury automatic movement for statement wear.</p>
+      <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact to Purchase</button>
+    </div>
+    <div class="product">
+      <h3>Sport Lux</h3>
+      <div class="price">$350</div>
+      <p>Bold sports styling with chronograph features and 100m water resistance.</p>
+      <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact to Purchase</button>
+    </div>
+  </div>
+</section>
+
+<form id="contact-form" action="mailto:leemessi63@gmail.com" method="POST" enctype="text/plain">
+  <h2 style="text-align:center; margin-bottom: 2rem; color:#f5deb3;">Send Purchase Inquiry</h2>
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="Name" required placeholder="Your full name" />
+
+  <label for="email">Email</label>
+  <input type="email" id="email" name="Email" required placeholder="your@email.com" />
+
+  <label for="watch">Watch Model</label>
+  <input type="text" id="watch" name="Watch Model" placeholder="e.g., Chrono Elite" />
+
+  <label for="message">Message</label>
+  <textarea id="message" name="Message" rows="5" placeholder="Anything specific you'd like to request?"></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+</body>
+</html>
+<section style="background:#0f0f0f; padding: 2rem; text-align: center; color: #e0c68a;">
+  <h2 style="margin-bottom: 1rem;">Connect with Us</h2>
+  <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+    <a href="https://instagram.com/tycoon_x32" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" width="30" alt="Instagram" style="filter: brightness(1.5);" />
+    </a>
+    <a href="https://facebook.com/tycoon_x32" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" width="30" alt="Facebook" style="filter: brightness(1.5);" />
+    </a>
+    <a href="https://twitter.com/tycoon_x32" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" width="30" alt="Twitter/X" style="filter: brightness(1.5);" />
+    </a>
+    <a href="https://tiktok.com/@tycoon_x32" target="_blank" style="text-decoration: none;">
+      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" width="30" alt="TikTok" style="filter: brightness(1.5);" />
+    </a>
+  </div>
+</section>
